@@ -1,0 +1,5 @@
+set OPENSSL_CONF=C:\ssl\openssl.cnf
+
+genrsa -out private.key 4096
+req -new -x509 -key private.key -out cert.crt
+x509 -req -in cert.crt -signkey private.key -out certificate.pem
